@@ -1,36 +1,64 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Participant Availability Scheduling System
 
-## Getting Started
+This project is a scheduling system that identifies overlapping meeting slots across multiple participants, considering their weekly availability, daily thresholds, and existing schedules.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+1. Identify overlapping time slots (30-minute durations) across multiple participants.
+2. Ensure that meetings are planned only when all participants are free and within their daily meeting thresholds.
+3. Avoid conflicts with existing participant schedules.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Prerequisites
 
-## Learn More
+Make sure you have the following installed:
 
-To learn more about Next.js, take a look at the following resources:
+1. **Redis** (For caching)
+2. **Node.js** (Backend server)
+3. **npm** or **yarn** (Package manager)
+4. **Next.js** (Frontend framework)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Installation Instructions
 
-## Deploy on Vercel
+Follow these instructions to set up the application on **Windows**, **Ubuntu**, or **Mac**.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### 1. Install Redis
+
+#### **Windows**
+
+1. Download the Redis MSI installer from [Memurai](https://memurai.com/) (a Redis-compatible solution for Windows).
+2. Install the MSI package by following the setup wizard.
+3. Start the Redis server:
+   ```bash
+   redis-server
+   ```
+
+#### **Ubuntu**
+
+1. sudo apt install redis-server -y
+2. sudo systemctl restart redis
+3. redis-cli ping
+
+#### **macOS**
+
+1. Install Homebrew if not already installed
+2. brew install redis
+3. brew services start redis
+4. redis-cli ping
+
+### 2. Install Node
+
+### 3. Install npm
+
+### 4. run 'npm install' from project folder
+
+### 5. npm run dev
+
+open `http://127.0.0.1/participant/availability` in browser
